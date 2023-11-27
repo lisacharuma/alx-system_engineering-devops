@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Prints "To infinity and beyond" with sleep 2 in btw each itera
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
