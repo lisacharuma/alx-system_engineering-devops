@@ -20,11 +20,7 @@ sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/
 
 # Adding custom header configuration to Nginx
 header_config="add_header X-Served-By \$HOSTNAME;"
-FILE=/etc/nginx/sites-available/default
-result=$(grep "$header_config" "$FILE")
-if [ -z "$result" ]; then
-	        sed -i "48 a $header_config" "$FILE"
-fi
+sudo sed -i "/location \//a \ \ \ \ $header_config" /etc/nginx/sites-enabled/default
 
 # Testing configurations for syntax errors
 sudo nginx -t
