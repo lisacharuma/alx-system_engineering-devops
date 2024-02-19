@@ -4,7 +4,8 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    url_todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(argv[1])
+    url_todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
+            argv[1])
     url_user = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
     todo_response = requests.get(url_todo)
     user_response = requests.get(url_user)
